@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Dodaj vest</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"></link>
+        <link href="s.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="template/template.xhtml">
+            <ui:define name="content">
+                <h1 class="text-center text-dark  p-5">Vesti</h1> 
+
+                <h:form>
+                    <h:panelGrid columns="2">
+                        Naziv vesti:
+                         <h:inputText value="#{testing.naziv}" required="true" requiredMessage="Morate uneti naziv vesti"></h:inputText>
+                        Tekst vesti:
+
+                        <p:textEditor widgetVar="editor1" value="#{testing.text}" height="300" style="margin-bottom:10px"/>
+
+                        <p:commandButton value="Submit" action="#{testing.ispisi()}" icon="ui-icon-disk" />
+                        <p:commandButton value="Clear" type="button" onclick="PF('editor1').clear();" icon="ui-icon-close" />
+
+                        Kategorija vesti: 
+                        <p:selectOneMenu id ="kategorija" value="#{registracijaVesti.nazivKategorijeVesti}">
+                            <f:selectItems value="#{registracijaVesti.sveKategorijeVesti}" var="kategorija" itemValue="#{kategorija}" itemLabel="#{kategorija}" />   	
+                        </p:selectOneMenu> 
+                         <h:commandButton value="Registruj" action="#{registracijaVesti.sacuvajVest()}" class="btn btn-outline-dark"></h:commandButton>
+                    </h:panelGrid>
+                </h:form>
+
+
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

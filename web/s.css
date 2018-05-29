@@ -1,0 +1,17 @@
+.dropdown-menu{
+    min-width:200px;
+}
+.collapsible {
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+}
+.active, .collapsible:hover {
+    cursor: pointer;
+}
+
+.content {
+    display: none;
+    overflow: hidden;
+}

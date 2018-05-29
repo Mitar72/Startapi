@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+        <meta http-equiv="pragma" content="no-cache"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"></link>
+        <link href="s.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body>
+        <ui:composition>
+
+            <div class="row text-center mt-5">
+                <c:if test="#{!testing.pr}">
+                    <div class="col-sm-3 border  border-top-0 border-muted pb-2">
+                        <a href="#" class="text-muted"><ui:insert name="sve"></ui:insert></a>
+
+                    </div>
+                    <div class="col-sm-3 border border-left-0 border-top-0 border-muted ">
+                        <a href="#" class="text-muted">Pretraga</a>
+
+                    </div>
+
+                    <div class="col-sm-6 border border-left-0 border-top-0 border-right-0 border-muted pr-2">
+                        <ui:insert name="logout"></ui:insert>
+
+                    </div>
+                </c:if>
+                <c:if test="#{testing.pr}">
+                    <div class="col-sm-3 border  border-top-0 border-muted pb-2">
+                        <a href="#" class="text-muted"><ui:insert name="sve"></ui:insert></a>
+
+                    </div>
+                    <div class="col-sm-3 border border-left-0 border-top-0 border-muted ">
+                        <a href="#" class="text-muted">Pretraga</a>
+
+                    </div>
+                    <div class="col-sm-3 border border-left-0 border-top-0 border-muted">
+                        <a href="#" class="text-muted"><ui:insert name="moje"></ui:insert> </a>
+
+                    </div>
+                    <div class="col-sm-3 border border-left-0 border-top-0 border-muted pr-2">
+                        <a href="#" class="text-muted"><ui:insert name="objavi"></ui:insert></a>
+
+                    </div>
+
+                </c:if>
+
+
+            </div>
+
+
+
+            <div class="row border  border-top-0 border-muted">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12  mt-5">
+                            <h4>Popularno</h4>
+
+                            <h5>nesto</h5>
+                            <h5>nesto</h5>
+                            <h5>nesto</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12  mt-5">
+                            <h4>Najnovije</h4>
+
+                            <h5>nesto</h5>
+                            <h5>nesto</h5>
+                            <h5>nesto</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12  mt-5">
+                            <h3>Kategorije</h3>
+                            <ui:insert name="kategorijaNaziv"></ui:insert>
+
+                            <h5><ui:insert name="kategorijaLink"></ui:insert></h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ui:composition>
+    </h:body>
+
+</html>

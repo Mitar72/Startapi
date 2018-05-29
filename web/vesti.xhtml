@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>vesti</title>
+        <!-- nisu potrebni -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <link href="s.css" rel="stylesheet" type="text/css"/>
+
+    </h:head>
+    <h:body>
+        <ui:composition template="template/template.xhtml">
+
+            <ui:define name="content">
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="text-center text-dark  p-5">Vesti</h1>  
+                    </div>
+                    <div class="col-sm-12">
+                        <h2 class="text-left">Pretraga:</h2> 
+                        <h:form id="form">
+                            <p:growl id="msgs" showDetail="true" />
+
+                            <div class='input-group'>
+                                <h:inputText class='form-control' size="100"></h:inputText>
+                                <span class="input-group-btn">
+                                    <button><i class="fa fa-search fa-2x"></i></button>
+                                </span>
+                            </div>
+                           
+                                <h:panelGrid columns="2">
+                                    Kategorija:
+                                    <h:selectManyListbox>
+                                        <f:selectItems></f:selectItems>
+                                    </h:selectManyListbox>
+                                    Datum postavljanja:
+                                   
+                                    Autor:
+
+                                </h:panelGrid>
+
+                           
+                        </h:form>
+
+
+                    </div>
+                    <div class="col-sm-12 mt-3">
+                        <ui:insert name = "vesti">
+                            <ui:include src = "news_carousel.xhtml"/>
+                        </ui:insert> 
+
+                    </div>
+                    <div class="col-sm-12 mt-3">
+
+                    </div>
+                </div>
+
+               
+            </ui:define>
+        </ui:composition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </h:body>
+</html>
