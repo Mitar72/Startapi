@@ -40,7 +40,7 @@
                     <h:panelGrid columns="3">              
                         korisnicko ime:
                         <p:inputText id="korisnickoIme" value="#{registracije.startap.korisnickoIme}" required="true" requiredMessage="Obavezno popuniti!">
-                            <p:ajax event="keyup" listener="#{registracije.proveriKorisnickoIme}" update="poruka"></p:ajax>                             
+                            <p:ajax event="keyup" process="@this" listener="#{registracije.proveriKorisnickoIme}" update="poruka"></p:ajax>                             
                         </p:inputText><br/>
                         <h:outputLabel for="korisnickoIme" id="poruka" value="#{registracije.poruka}"></h:outputLabel><br/>
                         

@@ -281,7 +281,7 @@ public class Registracije implements Serializable{
     public void proveriKorisnickoIme(AjaxBehaviorEvent e) {
         String korisnickoIme = (String) ((UIOutput) e.getSource()).getValue();
 
-        List<Investitor> korisnici = InvestitorDao.prtraziPoKorisnickomImenu(korisnickoIme);
+        List<Integer> korisnici = InvestitorDao.prtraziPoKorisnickomImenu(korisnickoIme);
         try {
             korisnici.get(0);
             poruka = "ime je zauzeto";
