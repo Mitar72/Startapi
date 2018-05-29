@@ -10,7 +10,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-
+//test komentar
 @ManagedBean
 @ViewScoped
 public class RegistracijaOglasa {
@@ -20,6 +20,7 @@ public class RegistracijaOglasa {
     private Investitor i = InvestitorDao.dohvatiInvestitoraPoIdu(3);
 
     public Oglas getOglas() {
+        
         return oglas;
     }
 

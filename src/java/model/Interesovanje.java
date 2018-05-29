@@ -5,6 +5,7 @@
  */
 package model;
 
+
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -49,6 +50,7 @@ public class Interesovanje implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "naziv")
     private String naziv;
+    
     @JoinTable(name = "interesovanje_has_korisnik", joinColumns = {
         @JoinColumn(name = "interesovanjeId", referencedColumnName = "id")}, inverseJoinColumns = {
         @JoinColumn(name = "korisnikId", referencedColumnName = "id")})
